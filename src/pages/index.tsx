@@ -75,7 +75,7 @@ export default function IndexPage() {
               radius: "full",
               variant: "shadow",
             })}
-            href={siteConfig.links.docs}
+            href={siteConfig.links.github}
           >
             진행한 프로젝트 보기
           </Link>
