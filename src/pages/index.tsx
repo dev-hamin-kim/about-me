@@ -21,7 +21,11 @@ export default function IndexPage() {
           <span className={title()}>김하민입니다.</span>
           <br />
           <div className={subtitle({ class: "mt-4" })}>
-            불편함을 해결하는 기획을 만들고,&#8203; 개발하여 현실에 선보입니다.
+            <span className="inline">
+              불편함을 해결하는 기획을 만들고,&nbsp;
+            </span>
+            <wbr />
+            <span className="inline">개발하여 현실에 선보입니다.</span>
           </div>
         </div>
 
