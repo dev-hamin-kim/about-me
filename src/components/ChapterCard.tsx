@@ -1,29 +1,15 @@
 import { Card, CardBody } from "@heroui/card";
-import { Image } from "@heroui/image";
 import { Card as HCard } from "@heroui/card";
 import { useState } from "react";
 
-export type ChapterCardProp = {
-  company: string;
-  role: string;
-  imageSrc: string;
-  projects: Projects[];
-}
-
-interface Projects {
-  id: string;
-  title: string;
-  description: string;
-  tags: string[];
-}
+import { ChapterCardProp } from "@/types";
 
 export function ChapterCard({
   company,
   role,
-  imageSrc,
   projects,
 }: ChapterCardProp) {
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<number | null>(null);
   const selectedProject = projects.find((p) => p.id === selected) || null;
 
   return (
@@ -35,13 +21,6 @@ export function ChapterCard({
       <CardBody>
         {/* Header */}
         <div className="flex gap-4 items-center mb-6">
-          <Image
-            alt={company}
-            src={imageSrc}
-            width={110}
-            height={110}
-            className="rounded-full object-cover"
-          />
           <div>
             <h3 className="text-xl font-semibold text-foreground/90">
               {company}
@@ -74,7 +53,6 @@ export function ChapterCard({
           ))}
         </div>
 
-        {/* Modal */}
         {selectedProject && (
           <div className="fixed inset-0 bg-black/40 flex items-center justify-center p-4 z-50">
             <div className="bg-white dark:bg-default-100 rounded-2xl shadow-xl max-w-lg w-full p-6 space-y-4">

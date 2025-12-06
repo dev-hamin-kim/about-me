@@ -1,6 +1,8 @@
 import { Alert } from "@heroui/alert";
 
-import { ChapterCard, ChapterCardProp } from "./ChapterCard";
+import { ChapterCard } from "./ChapterCard";
+
+import { ChapterCardProp } from "@/types";
 
 export function TimelineWrapper(items: ChapterCardProp[]) {
     const [date, title] = ["2025", "titlename"]
@@ -29,7 +31,6 @@ export function TimelineWrapper(items: ChapterCardProp[]) {
             <ChapterCard
               company={item.company}
               role={item.role}
-              imageSrc={item.imageSrc}
               projects={item.projects}
             />
           </div>
